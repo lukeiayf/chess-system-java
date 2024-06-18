@@ -34,4 +34,10 @@ public class Board {
     public Piece piece(Position position) {
         return pieces[position.getRow()][position.getColumn()];
     }
+
+    public void placePiece(Piece piece, Position position){
+        pieces[position.getRow()][position.getColumn()] = piece;
+        //you can directly access the position property of the piece since its protected and Board is in the same package as Piece
+        piece.position = position;
+    }
 }

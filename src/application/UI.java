@@ -28,12 +28,17 @@ public class UI {
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
-    public static ChessPosition readChessPosition(Scanner sc){
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+    public static ChessPosition readChessPosition(Scanner sc) {
         try {
             String s = sc.nextLine();
             char column = s.charAt(0);
             int row = Integer.parseInt(s.substring(1));
-            return new ChessPosition(column,row);
+            return new ChessPosition(column, row);
         } catch (RuntimeException e) {
             throw new InputMismatchException("Error reading ChessPosition. Valid values are from a1 to h8");
         }
@@ -54,10 +59,9 @@ public class UI {
         if (piece == null) {
             System.out.print("-");
         } else {
-             if (piece.getColor() == Color.WHITE) {
+            if (piece.getColor() == Color.WHITE) {
                 System.out.print(ANSI_WHITE + piece + ANSI_RESET);
-            }
-            else {
+            } else {
                 System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
             }
         }

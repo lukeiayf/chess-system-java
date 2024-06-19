@@ -21,6 +21,11 @@ public class Main {
                 System.out.print("Enter Source: ");
                 ChessPosition source = UI.readChessPosition(sc);
 
+                //creates a new matrix with possible moves colored
+                boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+                UI.clearScreen();
+                UI.printBoard(chessMatch.getPieces(), possibleMoves);
+
                 System.out.println();
                 System.out.print("Enter Target: ");
                 ChessPosition target = UI.readChessPosition(sc);

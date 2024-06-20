@@ -4,6 +4,7 @@ import boardGame.Board;
 import boardGame.Position;
 import chess.ChessPiece;
 import chess.Color;
+import chess.PiecesCode;
 
 public class Bishop extends ChessPiece {
     public Bishop(Board board, Color color) {
@@ -12,7 +13,7 @@ public class Bishop extends ChessPiece {
 
     @Override
     public String toString() {
-        return "B";
+        return getColor().equals(Color.WHITE) ? PiecesCode.WHITE_BISHOP : PiecesCode.BLACK_BISHOP;
     }
 
     @Override

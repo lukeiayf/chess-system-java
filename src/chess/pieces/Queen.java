@@ -4,6 +4,7 @@ import boardGame.Board;
 import boardGame.Position;
 import chess.ChessPiece;
 import chess.Color;
+import chess.PiecesCode;
 
 public class Queen extends ChessPiece {
     public Queen(Board board, Color color) {
@@ -12,7 +13,7 @@ public class Queen extends ChessPiece {
 
     @Override
     public String toString() {
-        return "Q";
+        return getColor().equals(Color.WHITE) ? PiecesCode.WHITE_QUEEN : PiecesCode.BLACK_QUEEN;
     }
 
     @Override

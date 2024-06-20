@@ -5,6 +5,7 @@ import boardGame.Position;
 import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.Color;
+import chess.PiecesCode;
 
 public class Pawn extends ChessPiece {
 
@@ -110,6 +111,6 @@ public class Pawn extends ChessPiece {
 
     @Override
     public String toString() {
-        return "P";
+        return getColor().equals(Color.WHITE) ? PiecesCode.WHITE_PAWN : PiecesCode.BLACK_PAWN;
     }
 }

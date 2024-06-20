@@ -2,9 +2,9 @@ package chess.pieces;
 
 import boardGame.Board;
 import boardGame.Position;
-import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.Color;
+import chess.PiecesCode;
 
 public class Knight extends ChessPiece {
 
@@ -15,7 +15,7 @@ public class Knight extends ChessPiece {
 
     @Override
     public String toString() {
-        return "N";
+        return getColor().equals(Color.WHITE) ? PiecesCode.WHITE_KNIGHT : PiecesCode.BLACK_KNIGHT;
     }
 
     private boolean canMove(Position position) {

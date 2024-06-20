@@ -5,6 +5,7 @@ import boardGame.Position;
 import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.Color;
+import chess.PiecesCode;
 
 public class King extends ChessPiece {
     private ChessMatch chessMatch;
@@ -17,7 +18,7 @@ public class King extends ChessPiece {
 
     @Override
     public String toString() {
-        return "K";
+        return getColor().equals(Color.WHITE) ? PiecesCode.WHITE_KING : PiecesCode.BLACK_KING;
     }
 
     private boolean canMove(Position position) {
